@@ -1,0 +1,29 @@
+# g++ grader.cc && cp solution output && ./a.out
+
+# Blank lines and comment lines (start with '#') are allowed
+
+# TASK 1
+# Your machine is given as lines of rules. Each rule has the form:
+# STATE SYMBOL -> NEW_STATE WRITE_SYMBOL ACTION
+# STATE can be any string. The Cowputer always starts in state "0".
+# SYMBOL can be any alphanumeric character (A-Z,a-z,0-9).
+# ACTION is one of L(eft) R(ight) S(tay) H(alt)
+# If your program encounters a state it has no rule for, that's WA.
+# With these rules, the Cowputer will go left until it finds an 'X' and then halt.
+# It won't change the array at all, because on every step it just writes whatever symbol
+# was already there.
+0 1 -> 0 1 L
+# ^"If you are in state 0 and see symbol '1', go to state 0, write a '1' and move left"
+# This means that the state stays the same, it writes a one on the current index
+# in the array, and moves to index-1 in the array
+0 0 -> 0 0 L
+# ^"If you are in state 0 and see symbol '0', go to state 0, write a '0' and move left"
+0 X -> 0 X H
+# ^"If you are in state 0 and see symbol 'X', go to state 0, write an 'X', and halt"
+
+# TASK 2
+# You should submit all your programs in one file. Programs are separated by '# TASK <N>' lines.
+# You would put your rules for TASK 2 here.
+# This submission for TASK 2 just halts immediately. Unfortunately, that does not solve task 2.
+0 0 -> 0 0 H
+0 1 -> 0 1 H
